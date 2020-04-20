@@ -12,7 +12,7 @@ func main() {
 	case res := <-ch:
 		fmt.Println(res)
 
-		//default:
+	default:
 
 	}
 
