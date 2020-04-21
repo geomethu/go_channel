@@ -6,7 +6,10 @@ import (
 )
 
 func main() {
+	// make a channel
 	ch := make(chan int)
+	defer close(ch)
+
 	go looper(ch)
 	select {
 	case res := <-ch:
@@ -19,8 +22,8 @@ func main() {
 }
 
 func looper(c chan int) {
-	for i := 0; i < 100; i++ {
-		time.Sleep(2 * time.Second)
+	for i := 0; i < 10; i++ {
+		time.Sleep(1 * time.Second)
 		c <- i
 	}
 }
