@@ -14,7 +14,7 @@ func main() {
 	for {
 		select {
 		case res := <-ch:
-			fmt.Println(res)
+			fmt.Println(" ", res)
 
 		default:
 
