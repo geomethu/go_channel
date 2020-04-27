@@ -11,12 +11,14 @@ func main() {
 	defer close(ch)
 
 	go looper(ch)
-	select {
-	case res := <-ch:
-		fmt.Println(res)
+	for {
+		select {
+		case res := <-ch:
+			fmt.Println(res)
 
-	default:
+		default:
 
+		}
 	}
 
 }
